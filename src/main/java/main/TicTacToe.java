@@ -5,13 +5,56 @@ import java.util.*;
 public class TicTacToe{
 public static int[][] ticbox;
 	public static int win(int [][]tic) {
+		int win=0;
 		//check all rows
 		//loop through rows from 0 to 3 and check if all the 3 places have same marks
- 		
+ 		for(int i=0;i<3;i++)
+ 		{
+ 			int count=0;
+ 			for(int j=0;j<3;j++) {
+ 				if(tic[i][j]==1) count++;
+ 			}
+ 			if(count==3) {
+ 				win=1;
+ 				return win;
+ 			}
+ 		}
+ 		for(int i=0;i<3;i++)
+ 		{
+ 			int count=0;
+ 			for(int j=0;j<3;j++) {
+ 				if(tic[i][j]==2) count++;
+ 			}
+ 			if(count==3) {
+ 				win=2;
+ 				return win;
+ 			}
+ 		}
 		
 		//check all cols
 		//loop through columns from 0 to 3 and check if all the 3 places have same marks
- 		
+ 		for(int i=0;i<3;i++)
+ 		{
+ 			int count=0;
+ 			for(int j=0;j<3;j++) {
+ 				if(tic[j][i]==1) count++;
+ 			}
+ 			if(count==3) {
+ 				win=1;
+ 				return win;
+ 			}
+ 		}
+ 		for(int i=0;i<3;i++)
+ 		{
+ 			int count=0;
+ 			for(int j=0;j<3;j++) {
+ 				if(tic[i][j]==2) count++;
+ 			}
+ 			if(count==3) {
+ 				win=2;
+ 				return win;
+ 			}
+ 		}
 		//check both diagonals 
 		
 		
@@ -41,7 +84,9 @@ public static int[][] ticbox;
 		
 		//Write your code here !!!
 		
-		
+		if((a1>=0&&a1<3)&&(a2>=0&&a2<3)&&tic[a1][a2]==0) {
+		return true;
+		}
 		return false;
 	}
 	public static void main(String args[]) {
